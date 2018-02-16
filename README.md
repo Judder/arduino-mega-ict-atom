@@ -14,3 +14,4 @@ This software is licensed under the BSD-2 license except for the following:
 Atom - https://atom.io/
 Platform.io - https://platformio.org/
 
+![Atom IDE Example](AtomIDEScreenShot.png)
