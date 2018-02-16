@@ -28,6 +28,8 @@
 #include <CJackrabbitGame.h>
 #include <CScrambleGame.h>
 #include <CScrambleSoundGame.h>
+#include <CTigerHeliGame.h>
+#include <CTigerHeliSoundGame.h>
 
 //
 // The initial selector to select the game to test.
@@ -46,11 +48,9 @@ static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Scramble  S(S1)",  onSelectGame,    (void*) (CScrambleSoundGame::createInstanceSet1),    false},
                                                   {"Scramble   (Z1)",  onSelectGame,    (void*) (CScrambleGame::createInstanceZacSet1),      false},
                                                   {"Scramble  S(Z1)",  onSelectGame,    (void*) (CScrambleSoundGame::createInstanceZacSet1), false},
-                                                  {"TigerHeli  (S1)",  onSelectGame,    (void*) (CTigerHeliGame::createInstanceSet1),         false},
-                                                  {"TigerHeli S(S1)",  onSelectGame,    (void*) (CTigerHeliSoundGame::createInstanceSet1),    false},
-                                                  {"SlapFight  (S1)",  onSelectGame,    (void*) (CTigerHeliGame::createInstanceSet2),         false},
-                                                  {"SlapFight S(S1)",  onSelectGame,    (void*) (CTigerHeliSoundGame::createInstanceSet2),    false},
+                                                  {"TigerHeli  (S1)",  onSelectGame,    (void*) (CTigerHeliGame::createInstanceTHSet1),         false},
+                                                  {"TigerHeli S(S1)",  onSelectGame,    (void*) (CTigerHeliSoundGame::createInstanceTHSet1),    false},
+                                                  {"SlapFight  (S1)",  onSelectGame,    (void*) (CTigerHeliGame::createInstanceSFSet1),         false},
+                                                  {"SlapFight S(S1)",  onSelectGame,    (void*) (CTigerHeliSoundGame::createInstanceSFSet1),    false},
                                                   { 0, 0 }
                                                  };
-
-

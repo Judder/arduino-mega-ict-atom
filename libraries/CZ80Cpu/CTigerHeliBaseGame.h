@@ -22,38 +22,39 @@
 // TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-#ifndef CTigerHeliGame_h
-#define CTigerHeliGame_h
+#ifndef CTigerHeliBaseGame_h
+#define CTigerHeliBaseGame_h
 
-#include "CTigerHeliBaseGame.h"
+#include "CGame.h"
 
-class CTigerHeliGame : public CTigerHeliBaseGame
+
+class CTigerHeliBaseGame : public CGame
 {
     public:
 
         //
-        // Constructors for this game.
+        // CTigerHeliBaseGame
         //
 
-        static IGame* createInstanceTHSet1(
+        virtual PERROR interruptCheck(
         );
 
-        static IGame* createInstanceSFSet1(
+        static PERROR onBankSwitchSetup8255_0(
+            void *cTigerHeliBaseGame
         );
 
-        //
-        // IGame Interface - wholly implemented in the Base game.
-        //
+        static PERROR onBankSwitchSetup8255_1(
+            void *cTigerHeliBaseGame
+        );
 
-    private:
+    protected:
 
-        //
-        // Different ROM sets supplied.
-        //
-        CTigerHeliGame(
+        CTigerHeliBaseGame(
             const ROM_REGION *romRegion
         );
 
+        ~CTigerHeliBaseGame(
+        );
 };
 
 #endif

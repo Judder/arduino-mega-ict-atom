@@ -43,7 +43,7 @@ static const UINT16 s_romData2nSet1_2P[]    = {0xd8,0xd1,0xd1,0xd1,0xc7,0xc7,0xd
 //
 // Stern Set 1 from MAME.
 //
-static const ROM_REGION s_romRegionSet1[] PROGMEM = { //
+static const ROM_REGION s_romRegionTHSet1[] PROGMEM = { //
                                                       {NO_BANK_SWITCH, 0x0000, 0x0800, s_romData2nSet1_2C, 0xb89207a1, " 2C"}, // 2d(__scrambles)
                                                       {NO_BANK_SWITCH, 0x0800, 0x0800, s_romData2nSet1_2E, 0xe9b4b9eb, " 2E"}, // 2e(__scrambles)
                                                       {NO_BANK_SWITCH, 0x1000, 0x0800, s_romData2nSet1_2F, 0xa1f14f4c, " 2F"}, // 2f(__scrambles)"
@@ -77,7 +77,7 @@ static const UINT16 s_romData2nZacSet1_2E[]     = {0x01,0x60,0x60,0x48,0x58,0x58
 static const UINT16 s_romData2nZacSet1_2XP[]    = {0x00,0x60,0x60,0x37,0xd1,0xd1,0x02,0x40,0xa0,0xc7};
 static const UINT16 s_romData2nZacSet1_2C[]     = {0x00,0x48,0x48,0xc8,0x98,0xc8,0xc8,0xff,0xff,0xff};
 
-static const ROM_REGION s_romRegionZacSet1[] PROGMEM = { //
+static const ROM_REGION s_romRegionSFSet1[] PROGMEM = { //
                                                          {NO_BANK_SWITCH, 0x0000, 0x0400, s_romData2nZacSet1_2XC, 0x3fb6cb36, "2XC"}, // 1 - Lo
                                                          {NO_BANK_SWITCH, 0x0400, 0x0400, s_romData2nZacSet1_2P,  0x40c5d8de, " 2P"}, // 1 - Hi
                                                          {NO_BANK_SWITCH, 0x0800, 0x0400, s_romData2nZacSet1_2XE, 0x02170b0e, "2XE"}, // 2 - Lo
@@ -98,18 +98,18 @@ static const ROM_REGION s_romRegionZacSet1[] PROGMEM = { //
 
 
 IGame*
-CTigerHeliGame::createInstanceSet1(
+CTigerHeliGame::createInstanceTHSet1(
 )
 {
-    return (new CTigerHeliGame(s_romRegionSet1));
+    return (new CTigerHeliGame(s_romRegionTHSet1));
 }
 
 
 IGame*
-CTigerHeliGame::createInstanceZacSet1(
+CTigerHeliGame::createInstanceSFSet1(
 )
 {
-    return (new CTigerHeliGame(s_romRegionZacSet1));
+    return (new CTigerHeliGame(s_romRegionSFSet1));
 }
 
 
@@ -118,5 +118,3 @@ CTigerHeliGame::CTigerHeliGame(
 ) : CTigerHeliBaseGame( romRegion )
 {
 }
-
-
