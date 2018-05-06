@@ -23,8 +23,20 @@
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 #include <C6809EGenericGame.h>
+
+//#define StarWars
+//#define Defender
+#define Williams
+
+#ifdef StarWars
 #include <CStarWarsGame.h>
+#endif
+#ifdef Defender
 #include <CDefenderGame.h>
+#endif
+#ifdef Williams
+#include <CWilliamsGame.h>
+#endif
 
 //
 // The initial selector to select the game to test.
@@ -32,13 +44,35 @@
 static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Generic 2716   ",  onSelectGeneric, (void*) (C6809EGenericGame::createInstance2716),        false},
                                                   {"Generic 2732   ",  onSelectGeneric, (void*) (C6809EGenericGame::createInstance2732),        false},
+#ifdef StarWars
                                                   {"Star Wars      ",  onSelectGame,    (void*) (CStarWarsGame::createInstance),                false},
                                                   {"Star Wars (O)  ",  onSelectGame,    (void*) (CStarWarsGame::createInstanceSetO),            false},
+#endif
+#ifdef Defender
                                                   {"Defender       ",  onSelectGame,    (void*) (CDefenderGame::createInstanceDefenderRed),     false},
                                                   {"Defender (G)   ",  onSelectGame,    (void*) (CDefenderGame::createInstanceDefenderGreen),   false},
                                                   {"Defender (B)   ",  onSelectGame,    (void*) (CDefenderGame::createInstanceDefenderBlue),    false},
                                                   {"Defender (W)   ",  onSelectGame,    (void*) (CDefenderGame::createInstanceDefenderWhite),   false},
+#endif
+#ifdef Williams
+                                                  {"Stargate       ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceStargate),             false},
+                                                  {"Robotron TieDie",  onSelectGame,    (void*) (CWilliamsGame::createInstanceRobotronTieDie),       false},
+                                                  {"Robotron Blue  ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceRobotronBlue),         false},
+                                                  //  {"Robotron Patch ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceRobotronBluePatched),  false},
+                                                  //  {"Robotron Pause ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceRobotronBluePause),    false},
+                                                  {"Robotron Y/O   ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceRobotronYellowOrange), false},
+                                                  {"Joust Green    ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceJoustWhiteGreen),      false},
+                                                  //  {"Joust Pause    ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceJoustPause),           false},
+                                                  //  {"Joust Red      ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceJoustSolidRed),        false},
+                                                  //  {"Joust Yellow   ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceJoustSolidYellow),     false},
+                                                  {"Bubbles        ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceBubbles),              false},
+                                                  //  {"Bubbles Red    ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceBubblesSolidRed),      false},
+                                                  //  {"Bubbles Proto  ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceBubblesProto),         false},
+                                                  {"Splat!         ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSplat),                false},
+                                                  //  {"Splat! SC1     ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSplatSC1),             false},
+                                                  {"Sinistar Rev 3 ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarRev3),         false},
+                                                  //  {"Sinistar Rev 2 ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarRev2),         false},
+                                                  //  {"Sinistar Proto ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarProto),        false},
+#endif
                                                   { 0, 0 }
                                                  };
-
-
