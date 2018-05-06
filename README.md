@@ -15,3 +15,12 @@ Atom - https://atom.io/
 Platform.io - https://platformio.org/
 
 ![Atom IDE Example](AtomIDEScreenShot.png)
+
+# Defining systems to test
+Rather than having separate compilations for each system, they are now defined using #ifdef statements in the main src/InCircuitTester.cpp file
+
+Simple #define the platform you wish to compile for e.g.
+
+#define Game6809E
+
+Specifically the 6809E game system has it's own #ifdef for game subsets within it as the Arduino was crashing with all systems enabled in one go - I'm guessing perhaps as a memory error, but either way if works fine with only one or two sub-systems enabled
