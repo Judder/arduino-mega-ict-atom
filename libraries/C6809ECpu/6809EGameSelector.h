@@ -25,8 +25,8 @@
 #include <C6809EGenericGame.h>
 
 //#define StarWars
-//#define Defender
-#define Williams
+#define StarWars
+//#define Williams
 
 #ifdef StarWars
 #include <CStarWarsGame.h>
@@ -36,6 +36,9 @@
 #endif
 #ifdef Williams
 #include <CWilliamsGame.h>
+#endif
+#ifdef Pacland
+#include <CPaclandGame.h>
 #endif
 
 //
@@ -73,6 +76,23 @@ static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Sinistar Rev 3 ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarRev3),         false},
                                                   //  {"Sinistar Rev 2 ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarRev2),         false},
                                                   //  {"Sinistar Proto ",  onSelectGame,    (void*) (CWilliamsGame::createInstanceSinistarProto),        false},
+#endif
+#ifdef Pacland
+                                                  {"Pacland        ",  onSelectGame,    (void*) (CPaclandGame::createInstance),             false},
+                                                  {"Pacland +H     ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Hi),          false},
+                                                  {"Pacland +HR    ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Hi_Rst),      false},
+                                                  {"Pacland (J)    ",  onSelectGame,    (void*) (CPaclandGame::createInstance_J),           false},
+                                                  {"Pacland (J) +H ",  onSelectGame,    (void*) (CPaclandGame::createInstance_J_Hi),        false},
+                                                  {"Pacland (J) +HR",  onSelectGame,    (void*) (CPaclandGame::createInstance_J_Hi_Rst),    false},
+                                                  {"Pacland (Jo)   ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo),          false},
+                                                  {"Pacland (Jo)+H ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo_Hi),       false},
+                                                  {"Pacland (Jo)+HR",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo_Hi_Rst),   false},
+                                                  {"Pacland (Jo2)  ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo2),         false},
+                                                  {"Pacland (Jo2)H ",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo2_Hi),      false},
+                                                  {"Pacland (Jo2)HR",  onSelectGame,    (void*) (CPaclandGame::createInstance_Jo2_Hi_Rst),  false},
+                                                  {"Pacland (M)    ",  onSelectGame,    (void*) (CPaclandGame::createInstance_M),           false},
+                                                  {"Pacland (M) +H ",  onSelectGame,    (void*) (CPaclandGame::createInstance_M_Hi),        false},
+                                                  {"Pacland (M) +HR",  onSelectGame,    (void*) (CPaclandGame::createInstance_M_Hi_Rst),    false},
 #endif
                                                   { 0, 0 }
                                                  };

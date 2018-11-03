@@ -24,6 +24,9 @@
 //
 #include <C6502GenericGame.h>
 #include <CTomahawk777Game.h>
+#include <CAsteroidsGame.h>
+#include <CAsteroidsDeluxeGame.h>
+#include <CLunarLanderGame.h>
 
 //
 // The initial selector to select the game to test.
@@ -33,7 +36,21 @@ static const SELECTOR s_gameSelector[] PROGMEM = {//0123456789abcde
                                                   {"Generic 2732   ",  onSelectGeneric, (void*) (C6502GenericGame::createInstance2732),            false},
                                                   {"T-777   (5)    ",  onSelectGame,    (void*) (CTomahawk777Game::createInstanceSet5),            false},
                                                   {"T-777   (5) clk",  onSelectGame,    (void*) (CTomahawk777Game::createInstanceClockMasterSet5), false},
+                                                  {"Asteroids (4)  ",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceSet4),              false},
+                                                  {"Asteroids(4)clk",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceClockMasterSet4),   false},
+                                                  {"Asteroids (2)  ",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceSet2),              false},
+                                                  {"Asteroids(2)clk",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceClockMasterSet2),   false},
+                                                  {"Asteroids (1)  ",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceSet1),              false},
+                                                  {"Asteroids(1)clk",  onSelectGame,    (void*) (CAsteroidsGame::createInstanceClockMasterSet1),   false},
+                                                  {"AstDlx (3)     ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceSet3),        false},
+                                                  {"AstDlx (3) clk ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceClockMasterSet3),   false},
+                                                  {"AstDlx (2)     ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceSet2),              false},
+                                                  {"AstDlx (2) clk ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceClockMasterSet2),   false},
+                                                  {"AstDlx (1)     ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceSet1),              false},
+                                                  {"AstDlx (1) clk ",  onSelectGame,    (void*) (CAsteroidsDeluxeGame::createInstanceClockMasterSet1),   false},
+                                                  {"LLander (2)    ",  onSelectGame,    (void*) (CLunarLanderGame::createInstanceSet2),            false},
+                                                  {"LLander (2) clk",  onSelectGame,    (void*) (CLunarLanderGame::createInstanceClockMasterSet2), false},
+                                                  {"LLander (1)    ",  onSelectGame,    (void*) (CLunarLanderGame::createInstanceSet1),            false},
+                                                  {"LLander (1) clk",  onSelectGame,    (void*) (CLunarLanderGame::createInstanceClockMasterSet1), false},
                                                   { 0, 0 }
                                                  };
-
-
